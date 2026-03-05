@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clon de Tienda en Línea</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brandYellow: '#fff159',
+        brandBlue: '#3483fa'
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+<header class="bg-brandYellow py-2 px-4 shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-2xl font-bold text-indigo-900 cursor-pointer">MercadoCódigo</div>
+    <div class="flex-grow w-full md:max-w-2xl flex">
+      <input type="text" id="searchInput" placeholder="Buscar productos, marcas y más..." class="w-full py-2 px-4 rounded-l-md border-transparent focus:ring-0 focus:outline-none shadow-sm text-gray-700">
+      <button id="searchBtn" class="bg-white px-4 py-2 rounded-r-md shadow-sm border-l border-gray-200 hover:bg-gray-50 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm text-gray-800 font-medium">
+      <a href="#" class="hover:text-black">Categorías</a>
+      <a href="#" class="hover:text-black">Ofertas</a>
+      <a href="#" class="hover:text-black">Historial</a>
+      <a href="#" class="hover:text-black">Mi Cuenta</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-8">
+
+  <section class="mb-16">
+    <h2 class="text-2xl font-light mb-6 text-gray-600">Productos Destacados</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod1/200" alt="Producto 1" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Auriculares Inalámbricos Bluetooth</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 45.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod2/200" alt="Producto 2" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Teclado Mecánico RGB Switch Red</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 120.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod3/200" alt="Producto 3" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Monitor Curvo 24 Pulgadas 144hz</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 650.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod4/200" alt="Producto 4" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Silla Gamer Ergonómica Ajustable</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 480.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod5/200" alt="Producto 5" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Mouse Inalámbrico Óptico 3200 DPI</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 35.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+        <img src="https://picsum.photos/seed/prod6/200" alt="Producto 6" class="w-full h-40 object-cover border-b border-gray-100">
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-sm font-light text-gray-600 mb-2 line-clamp-2">Micrófono Condensador USB Profesional</h3>
+          <p class="text-xl font-normal text-gray-800 mb-4">$ 185.000</p>
+          <button class="buy-btn mt-auto bg-brandBlue text-white py-1.5 px-3 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors">Comprar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="text-2xl font-light mb-6 text-gray-600">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-md shadow-sm flex items-start gap-4">
+        <div class="text-3xl">💳</div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Pago Seguro</h3>
+          <p class="text-sm text-gray-500">Paga con tarjeta de crédito, débito o efectivo. Tu dinero está siempre protegido.</p>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-md shadow-sm flex items-start gap-4">
+        <div class="text-3xl">📦</div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Envío Gratis</h3>
+          <p class="text-sm text-gray-500">Aprovecha envíos gratuitos en millones de productos seleccionados.</p>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-md shadow-sm flex items-start gap-4">
+        <div class="text-3xl">🛡️</div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Compra Protegida</h3>
+          <p class="text-sm text-gray-500">Te acompañamos hasta que recibas lo que compraste. Si no es lo que esperabas, te devolvemos el dinero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-light mb-6 text-gray-600">Developer Portfolio</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+      <div id="portfolio-dev1" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border-t-4 border-blue-500">
+        <img src="https://i.pravatar.cc/150?img=11" alt="Avatar Dev 1" class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Ana Martínez</h3>
+        <p class="text-sm text-gray-500 font-medium mb-3">Frontend Engineer</p>
+        <p class="text-sm text-gray-600 mb-4">Especialista en crear interfaces de usuario atractivas y responsivas con un enfoque en la accesibilidad.</p>
+        <div class="w-full text-left mb-4">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Servicios:</strong>
+          <ul class="text-sm text-gray-700 list-disc list-inside">
+            <li>Desarrollo de Landing Pages</li>
+            <li>Optimización UI/UX</li>
+          </ul>
+        </div>
+        <div class="w-full text-left mb-6">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Tecnologías:</strong>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">React</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Tailwind</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">HTML/CSS</span>
+          </div>
+        </div>
+        <a href="https://github.com" target="_blank" class="mt-auto w-full bg-gray-900 text-white py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">Ver GitHub</a>
+      </div>
+
+      <div id="portfolio-dev2" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border-t-4 border-green-500">
+        <img src="https://i.pravatar.cc/150?img=12" alt="Avatar Dev 2" class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Carlos Ruiz</h3>
+        <p class="text-sm text-gray-500 font-medium mb-3">Backend Developer</p>
+        <p class="text-sm text-gray-600 mb-4">Apasionado por la arquitectura de software, bases de datos escalables y seguridad en aplicaciones web.</p>
+        <div class="w-full text-left mb-4">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Servicios:</strong>
+          <ul class="text-sm text-gray-700 list-disc list-inside">
+            <li>Creación de APIs REST</li>
+            <li>Gestión de Bases de Datos</li>
+          </ul>
+        </div>
+        <div class="w-full text-left mb-6">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Tecnologías:</strong>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Node.js</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Python</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">PostgreSQL</span>
+          </div>
+        </div>
+        <a href="https://github.com" target="_blank" class="mt-auto w-full bg-gray-900 text-white py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">Ver GitHub</a>
+      </div>
+
+      <div id="portfolio-dev3" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border-t-4 border-purple-500">
+        <img src="https://i.pravatar.cc/150?img=32" alt="Avatar Dev 3" class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Laura Gómez</h3>
+        <p class="text-sm text-gray-500 font-medium mb-3">Full Stack Developer</p>
+        <p class="text-sm text-gray-600 mb-4">Solucionadora de problemas que disfruta conectando el frontend con arquitecturas backend robustas.</p>
+        <div class="w-full text-left mb-4">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Servicios:</strong>
+          <ul class="text-sm text-gray-700 list-disc list-inside">
+            <li>Aplicaciones Web Completas</li>
+            <li>Mantenimiento de Software</li>
+          </ul>
+        </div>
+        <div class="w-full text-left mb-6">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Tecnologías:</strong>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Vue.js</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Laravel</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">MySQL</span>
+          </div>
+        </div>
+        <a href="https://github.com" target="_blank" class="mt-auto w-full bg-gray-900 text-white py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">Ver GitHub</a>
+      </div>
+
+      <div id="portfolio-dev4" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border-t-4 border-yellow-500">
+        <img src="https://i.pravatar.cc/150?img=58" alt="Avatar Dev 4" class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Dev 4 - Frontend</h3>
+        <p class="text-sm text-gray-500 font-medium mb-3">Implementacion y mantenimiento UI</p>
+        <p class="text-sm text-gray-600 mb-4">Encargado de construir interfaces claras, responsivas y consistentes para el clon de Mercado Libre.</p>
+        <div class="w-full text-left mb-4">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Servicios:</strong>
+          <ul class="text-sm text-gray-700 list-disc list-inside">
+            <li>Maquetacion responsive con Tailwind CSS</li>
+            <li>Refactor de componentes visuales</li>
+            <li>Correccion de estilos y estados de UI</li>
+          </ul>
+        </div>
+        <div class="w-full text-left mb-6">
+          <strong class="text-xs uppercase text-gray-400 block mb-1">Tecnologias:</strong>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">HTML5</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">JavaScript</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Git</span>
+          </div>
+        </div>
+        <a href="https://github.com/tuto" target="_blank" rel="noopener noreferrer" class="mt-auto w-full bg-gray-900 text-white py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">Ver GitHub</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-white border-t border-gray-200 mt-12 py-8 px-4 text-center text-gray-500 text-sm">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="flex gap-4">
+      <a href="#" class="hover:text-gray-800">Trabaja con nosotros</a>
+      <a href="#" class="hover:text-gray-800">Términos y condiciones</a>
+      <a href="#" class="hover:text-gray-800">Privacidad</a>
+    </div>
+    <div>
+      <p>Copyright © 2026 MercadoCódigo. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+  const buyButtons = document.querySelectorAll(".buy-btn");
+
+  searchBtn.addEventListener("click", () => {
+    if(searchInput.value.trim() !== "") {
+      alert("Buscando: " + searchInput.value);
+      searchInput.value = "";
+    }
+  });
+
+  buyButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert("¡Producto agregado a tu carrito de compras!");
+    });
+  });
+});
+</script>
+</body>
+</html>
